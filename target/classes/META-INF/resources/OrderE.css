@@ -1,0 +1,152 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+/* Custom properties*/
+
+:root{
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 300; /* might need to change later*/
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark:  #926239 ;
+    --clr-accent: #afa075;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    }
+     @media (min-width: 800px){
+         :root{
+             --fs-h1: 4.5rem;
+             --fs-h2: 3.75rem;
+             --fs-h3: 1.5rem;
+             --fs-body: 1.25rem;
+
+
+         }
+     }
+
+     /* General Styles*/
+
+     body {
+         background: var(--clr-light);
+
+
+         margin: 0;
+          font-family: Arial, "Helvetica Neue" ,
+            Helvetica, sans-serif;
+        
+            font-size:17px;
+            color: #854b19;
+            line-height: 1.6;
+        
+
+     }
+
+
+
+    #order h1{
+        font-size: 50px;
+        line-height: 1.2;
+    }
+
+
+
+section{
+    padding: 5em 2em;
+}
+     img{
+         display: block;
+         max-width: 100%;
+     }
+
+     /*Typography*/
+     strong{font-weight: var(--fw-bold)}
+
+     :focus{
+ outline: 3px solid var(--clr-accent);
+ outline-offset: 3px;
+
+     }
+/*button*/
+     .button{
+ display: inline-block;
+ padding: .5em 2.5em;
+ background: var(--clr-dark);
+ color: var(--clr-light);
+ text-decoration: none;
+ cursor: pointer;
+ font-size: .8rem;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ font-weight: var(--fw-bold);
+ transition: transform 200ms ease-in-out;
+     }
+     .button:hover{
+         transform: scale(1.1);
+     }
+
+     h1,
+     h2,
+     h3{
+         line-height: 1;
+         margin: 0;
+     }
+h1{font-size: var(--fs-h1)}
+h2{font-size: var(--fs-h2)}
+h3{font-size: var(--fs-h3)}
+
+
+
+.my-services{
+    background-color:  var(--clr-light);
+    background-image: url(img/fork-spoon-wooden-table-background-natural-living-lifestyle-91655629.jpeg);
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: var(--clr-dark); /*maybe chage this to dark*/
+
+    text-align: center;
+}
+
+.section__title--services{
+    color: var(--clr-dark);
+    position: relative;
+}
+
+.section__title--services::after{
+
+    content: '';
+    display: block;
+    width: 3em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 0.5;
+}
+
+.services{
+    margin-bottom:  4em;
+}
+.service{
+    max-width: 500px;
+    margin: 0 auto;
+}
+@media (min-width: 800px){
+    .services{
+        display: flex;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right:auto
+    }
+    .service + .service{
+        margin-left: 2em;
+    }
+}
+

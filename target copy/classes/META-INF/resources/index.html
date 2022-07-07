@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- To Do -->
+
+<!-- Change pop up to new tab events -->
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <script defer src="https://kit.fontawesome.com/81f015fcff.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Name Session -->
+  <div class="content">
+    <div id="name" class="BasicLayout">
+      <div>
+        <div> Hi, I'm Luying Jiang</div>
+        <div id="caption" class="caption">//Aspiring Software Engineer...</div>
+
+        <!-- Linkedin, Github, Email Icons -->
+        <div> 
+          <i onclick="window.open('https://www.linkedin.com/in/luying-jiang-295b6a95/',target = '_blank');"
+            class="icon fa-brands fa-linkedin"></i>
+
+          <i onclick="window.open('https://github.com/janalj/',target = '_blank');"
+            class="icon fa-brands fa-github-square"></i>
+          <i onclick="window.open('mailto:janalj1031@gmail.com',target = '_blank');"
+            class="icon fa-solid fa-envelope"></i>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Greeting Session -->
+    <div id = "greetingbox" class="BasicLayout">
+      <h1>Greeting</h1>
+      <p>I'm an incoming senior at University of California, Davis majoring in Computer Science. I’m interested in full-stack software development. </p>      <!-- <p>Click <a href="/hello">here</a> to see content created by server code.</p> -->
+      <p>Random Facts About Me:</p>
+      <button class = "buttons" onclick="addRandomGreeting()">Click Me</button>
+      <div id="greeting-container"></div>
+    </div>
+
+    <!-- Project Session -->
+    <div id="projects" class="BasicLayout">
+      <h1 class = "sessionTitle">My Projects</h1>
+    </div>
+
+    <div id = "" class="BasicLayout  projectsContainer">
+        <div id = "" class = "projectbox">
+            <!-- Project 1 -->
+            <h3>Water Level API Request</h3>
+            <img src="img/WaterLevel.jpg" width="200" height="auto"
+            onclick="window.open('https://waterlevelreactproject-frontend.ecs162-s22.repl.co','popup','width=800,height=800');">
+            <button id = "project1Code" class = "buttons" 
+            onclick="window.open('https://github.com/janalj/WaterLevelReactProject-Frontend','popup','width=800,height=800');">View Codes</button>
+            <div class="projectText">                
+                <h5>Frontend: React, HTML, CSS, JS </h5>  
+                <h5>Backend: Nodejs, Express, Vite </h5>  
+                <h5>Description: A responsive dynamic website that sends AJAX requests based on month and year to the public data API from CDEC to obtain the water levels at the seven biggest California reservoirs. Upon data returned, the website generate a chart and presents to the users.
+                </h5>  
+            </div>       
+        </div>
+
+
+        
+             <!-- Project 2 -->
+        <div id = "" class = "projectbox">
+            <h3>Favorite Pet Videos</h3>
+            <img src="img/PetVideos.jpg" width="200" height="auto"
+            onclick="window.open('https://favorite-pet-videos.janalj.repl.co/','popup','width=800,height=800');">
+            <button id = "project2Code" class = "buttons" 
+            onclick="window.open('https://github.com/janalj/Favorite-Pet-Videos','popup','width=800,height=800');">View Codes</button>
+            <div class="projectText">
+                <h5>Frontend: HTML, CSS, JS </h5>  
+                <h5>Backend: Node.js, Express, SQLite, Tiktok API</h5>  
+                <h5>Description: A multi-player game for picking the winner pet video. Users upload their favorite Tiktok pet videos. The database stores the entered data. The application loads the videos for users to compare and like. Finally, it generates the winner video. </h5>
+            </div>               
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div id = "" class="BasicLayout  projectsContainer">
+        <div id = "" class = "projectbox">
+            <h3>Museum Static Website</h3>
+            <img src="img/Slan.jpg" width="200" height="auto"
+            onclick="window.open('https://melodious-sorbet-8c3272.netlify.app/','popup','width=800,height=800');">
+            <button class = "buttons" 
+            onclick="window.open('https://github.com/janalj/SlanStep','popup','width=800,height=800');">View Codes</button>
+            <div  class="projectText">
+                <h5>Frontend: HTML, CSS, JS </h5>  
+                <h5>Description: Responsive web page for a museum. </h5>  
+            </div>    
+        </div>
+
+        <!-- Other project -->
+        <div id = "otherProject" class = "projectbox">
+            <h3>Other Projects</h3>
+            <button class = "buttons" 
+            onclick="window.open('https://github.com/janalj/','popup','width=800,height=800');">Go to Github</button>
+            <!-- <img src="img/Slan.jpg" width="200" height="auto"> -->
+        </div>
+      </div>
+    
+
+    <!-- form  -->
+    <div id = "contactMe" class="BasicLayout">
+        <div class = "sessionTitle" >Contact Me</div>
+        <form action = "/form-handler" method="POST">
+
+        <label>Your Name</label>
+        <input class="inputBox" type="text" id="yourName" name = "Name" required>
+
+    
+        <label>Email</label>
+        <input class="inputBox" type="text" id="email" name = "Email" required>
+  
+        <label>Message</label>
+        <textarea class="inputBox" name="text-input" placeholder="Enter here" id = "inputValue" required></textarea>
+
+
+        <br />
+        <div>
+            <input  class = "buttons" type="submit" />
+        </div>
+
+        </form>
+    </div>
+  </div>
+</body>
+
+</html>
