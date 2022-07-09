@@ -1,27 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant</title>
-
-    <link href="style.css" rel="stylesheet"> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-    <header id="show">
-    <h1 >Welcome</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-        Modi officiis i
-        psum officia numquam expedita ullam.</p>
 
-    <a href="OrderEdit.html" class="button">Customize Order</a>
-</header>
+  <script defer src="script.js"></script>
 
-<section id="section-a">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit 
-        minus impedit maxime, quae soluta quispellat ipsa molest
-        ias veritatis? Mollitia, fugit dolore commodi porro repudiandae 
-        ipsum quam culpa fuga deleniti quae.</p>
+
+  <div class="wrapper">
+
+<!--     Restruant Info. Section  -->
+    <section class="sectionWrapper" id="resturantInfo">
+      <h3>Resturant Information</h3>
+      <div class = "pinkBox" id="resBox">
+        <div class="boxText">
+          <div id="restruantName">Your Restruant Name</div>
+          <div>1 Google Street, Mountain View, CA</div>
+          <div>999-999-9999</div>
+        </div>
+        <div class="boxButton">
+          <button id = "restruantEdit" class="editButton">Edit</button>
+        </div>
+      </div>
+
+<!-- Add Section  -->
+    </section>
+    <section class="sectionWrapper" id="addItem">
+      <button id="addButton">Add Item</button>
+    </section>
+
+<!--     Menu Display Section  -->
+    <section class="sectionWrapper" id="MenuInfo">
+      <h3>Menu Information</h3>
+      <div id="menuBoxContainer">
+        <div class = "pinkBox" id="menuBox">
+          <div class="boxText">
+            <div id="itemName">Item Name </div>
+            <div>$10</div>
+          </div>
+          <div class="boxButton">
+            <button class="editButton">Edit</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
 </body>
+
 </html>

@@ -1,60 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=DM+Sans:wght@400;700&family=Inter:wght@400;600&family=Orbitron:wght@400;500;600;700&family=Roboto+Condensed:wght@400;700&display=swap');
+
 *{
-    margin:0;
-    padding:0;
+  font-family: 'DM Sans', sans-serif;
+  font-weight:bold;
 }
 
-body{
-    margin: 0;
-    font-family: Arial, "Helvetica Neue" ,
-    Helvetica, sans-serif;
-
-    font-size:17px;
-    color: #854b19;
-    line-height: 1.6;
+html, body {
+  height: 100%;
+  width: 100%;
 }
 
-#show{
-    background-image: url('img/pexels-lukas-349609.jpg');
-background-size: cover;
-background-position: center;
-    height:100vh;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align: center;
-    padding:0 20px;
-
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
 }
-#show h1{
-    font-size: 50px;
-    line-height: 1.2;
+
+.sectionWrapper{
+  height: 200px;
+  width: 70%;
+  max-width: 800px;
 }
-#show p{
-    font-size:20px;
-  }
-#show .button{
 
-    font-size:18px;
-    text-decoration: none;
-    color: #815026;
-    border: #926239 1px solid;
-
-    padding: 10px 20px;
+.pinkBox{
+    display: flex;
+    flex-direction: column;
+    background-color: #F2E2D7;
     border-radius: 10px;
-    margin-top:20px;
+    margin: 20px;
 }
 
-#show .button:hover{
-    background: #926239;
+.entryRow{
+  margin: 15px;
+}
 
-    color:#fff;
+label{
+  margin: 10px ;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.entryPage{
+  margin-top: 200px;
+}
+
+input{
+    font-size: 16px;
+    border: 1px solid #436073;
+    border-radius: 8px;
+    width: 214px;
+}
+
+#resBox{
+    width: 348px;
+    height: 140px;
+}
+
+.boxText{
+  margin: 15px;
+}
+
+#menuBox{
+  width: 200px;
+  height: 150px;
 
 }
-#section-a{
-    padding:20px;
-    background:#926239;
-    color:#fff;
-    text-align:center;
-  }
+
+#subBox{
+  height: 300px;
+  width: 600px;
+  align-items: center;
+  justify-content: center;
+}
+
+#addItem{
+/*   background-color:red; */
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: flex-end;
+  height: 80px;
+}
+
+.boxButton{
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+}
+
+Button{
+    text-align: center;
+    color: whitesmoke;
+    background-color: #21695C;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(0 0 0 / 10%);
+    width: 90px;
+    height: 26px;
+    margin: 10px;
+}
+
+.returnButton{
+  margin-top:200px;
+}
+
+Button:hover{
+  background-color:#3ec2ab;
+ 
+}
+
+#addButton{
+  width: 100px;
+}
