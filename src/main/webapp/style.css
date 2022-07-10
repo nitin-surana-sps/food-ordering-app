@@ -29,8 +29,14 @@ html, body {
     background-color: #F2E2D7;
     border-radius: 10px;
     margin: 20px;
+    width: 200px;
+    height: 150px;
 }
 
+#menuBoxContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
 .entryRow{
   margin: 15px;
 }
@@ -65,11 +71,7 @@ input{
   margin: 15px;
 }
 
-#menuBox{
-  width: 200px;
-  height: 150px;
 
-}
 
 #subBox{
   height: 300px;
