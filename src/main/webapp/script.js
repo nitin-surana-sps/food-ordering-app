@@ -30,8 +30,15 @@ AddButton.addEventListener("click", function() {
 
 // Async get function to get the real data 
 
+async function getMenus(){
+    const responseFromServer = await fetch('/*');
+    // The json() function returns an object that contains fields that we can
+    // reference to create HTML.
+    const menu  = await responseFromServer.json();
+  
+    const fakeData= document.getElementById('');
 
-// using fake data for now
+    // using fake data for now
 
 let fakeData = ["Spegatti",12, "Pasta", 13, "Fettuccine ", 14];
 
