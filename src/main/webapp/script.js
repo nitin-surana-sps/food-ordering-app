@@ -3,7 +3,7 @@ let resButton = document.getElementById("restruantEdit");
 
 resButton.addEventListener("click", function() {
     // your code here...
-  window.location.replace("");
+  window.location.replace("resturant.html");
 })
 
 
