@@ -36,7 +36,7 @@ async function getMenus(){
     // reference to create HTML.
     const menu  = await responseFromServer.json();
   
-    const fakeData= document.getElementById('');
+    const fakeData= document.getElementById('menuBoxContainer');
 
     // using fake data for now
 
@@ -73,5 +73,6 @@ function newBlock(itemName,price){
     </div>
 `;
   return div
+}
 }
 
