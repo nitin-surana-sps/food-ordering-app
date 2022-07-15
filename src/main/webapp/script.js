@@ -71,8 +71,6 @@ window.onload = function() {
 }
 
 
-
-
 //function that creates the child element 
 
 // add <div> for it 

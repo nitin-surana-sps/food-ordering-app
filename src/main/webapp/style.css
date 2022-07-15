@@ -36,6 +36,7 @@ html, body {
 #menuBoxContainer{
   display: flex;
   flex-wrap: wrap;
+  min-width: 600px;
 }
 .entryRow{
   margin: 15px;

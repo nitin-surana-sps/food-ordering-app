@@ -16,18 +16,16 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-@WebServlet("/form-handler")
-public class FormHandlerServlet extends HttpServlet {
+@WebServlet("/menu-form-handler")
+public class MenuFormHandlerServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-    // Get the value entered in the form.
-    String textValue = request.getParameter("text-input");
-    // get name 
-    String name = request.getParameter("Name");
-    // get email 
-    String email = request.getParameter("Email");
+    // Get itemName 
+    String itemName = request.getParameter("itemName");
+    // Get itemPrice
+    String itemPrice = request.getParameter("itemPrice");
 
     long timestamp = System.currentTimeMillis();
 
@@ -36,14 +34,13 @@ public class FormHandlerServlet extends HttpServlet {
     // Create Datastore instance
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     // Create a task
-    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Task");
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("MenuItem");
 
     // Create entity
     FullEntity taskEntity =
         Entity.newBuilder(keyFactory.newKey())
-        .set("textValue", textValue)
-        .set("name", name)
-        .set("email", email)
+        .set("itemName", itemName)
+        .set("itemPrice", itemPrice)
         .set("timestamp", timestamp)
         .build();
 
