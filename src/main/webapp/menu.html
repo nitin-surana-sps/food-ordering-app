@@ -10,7 +10,7 @@
 
 <body>
 
-  <script defer src="script.js"></script>
+  <script defer src="menu.js"></script>
 
   <div class="entryPage">
     <div class="wrapper">
@@ -22,11 +22,11 @@
           <form action = "/menu-form-handler" method="POST">
             <div class="entryRow">
               <label>Item Name: </label>
-              <input type="text" name="itemName">
+              <input type="text" name="itemName" id="menuItemName">
             </div>
             <div class="entryRow">
               <label>Item Price: </label>
-              <input type="text" name="itemPrice">
+              <input type="text" name="itemPrice" id="menuItemPrice">
             </div>
             <div class="boxButton">
                 <input class = "button" id = "menuSubmit" type="submit" />
