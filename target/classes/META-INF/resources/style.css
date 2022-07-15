@@ -96,6 +96,18 @@ input{
     width: 90%;
 }
 
+.button{
+    text-align: center;
+    color: whitesmoke;
+    background-color: #21695C;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(0 0 0 / 10%);
+    width: 90px;
+    height: 26px;
+    margin: 10px;
+}
+
 Button{
     text-align: center;
     color: whitesmoke;

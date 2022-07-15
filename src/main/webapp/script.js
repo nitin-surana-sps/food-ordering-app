@@ -30,17 +30,17 @@ AddButton.addEventListener("click", function() {
 
 
 
-async function test(){
-    let response = await fetch('/list-menuItems');
-    if(response.ok){
-        const JsonArray = await  response.json();
-        console.log(JsonArray);
-    }else {
-      throw Error(response.status);
-    }
-}
+// async function test(){
+//     let response = await fetch('/list-menuItems');
+//     if(response.ok){
+//         const JsonArray = await  response.json();
+//         console.log(JsonArray);
+//     }else {
+//       throw Error(response.status);
+//     }
+// }
 
-test();
+// test();
 
 
 
