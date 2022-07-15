@@ -25,6 +25,28 @@ AddButton.addEventListener("click", function() {
 
 // Menu Flow
 
+// Test ListTaskServlet
+
+
+
+
+async function test(){
+    let response = await fetch('/list-tasks');
+    if(response.ok){
+        const JsonArray = await  response.json();
+        console.log(JsonArray);
+    }else {
+      throw Error(response.status);
+    }
+}
+
+test();
+
+
+
+
+
+
 // Async get function to get the real data 
 
 let returnData = [];
