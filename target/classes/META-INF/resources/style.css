@@ -29,8 +29,15 @@ html, body {
     background-color: #F2E2D7;
     border-radius: 10px;
     margin: 20px;
+    width: 200px;
+    height: 150px;
 }
 
+#menuBoxContainer{
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 600px;
+}
 .entryRow{
   margin: 15px;
 }
@@ -65,11 +72,7 @@ input{
   margin: 15px;
 }
 
-#menuBox{
-  width: 200px;
-  height: 150px;
 
-}
 
 #subBox{
   height: 300px;
@@ -87,10 +90,26 @@ input{
   height: 80px;
 }
 
+#menuSubmit{
+    
+}
+
 .boxButton{
     display: flex;
     justify-content: flex-end;
     width: 90%;
+}
+
+.button{
+    text-align: center;
+    color: whitesmoke;
+    background-color: #21695C;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(0 0 0 / 10%);
+    width: 90px;
+    height: 26px;
+    margin: 10px;
 }
 
 Button{
