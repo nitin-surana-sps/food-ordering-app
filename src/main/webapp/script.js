@@ -27,25 +27,45 @@ AddButton.addEventListener("click", function() {
 
 // Async get function to get the real data 
 
+let returnData = [];
 
-// using fake data for now
+// Server Response "/menuItems"
+async function getMenuItems() {
 
-let fakeData = ["001","Spegatti",12, "002", "Pasta",  13, "003", "Fettuccine ", 14,"004", "Coke", 3];
+    // send get request 
+    let responseFromServer = await fetch('/menuItems');
+    if (responseFromServer.ok) {
+        // return the array on success
+      const JsonArray = await  responseFromServer.json();
+      return JsonArray;
+    } else {
+      throw Error(responseFromServer.status);
+    }
+  
+  }
 
-let dataLenghth = fakeData.length;
 
-let id = 0,itemName = 0,price = 0;
+// returnedArray from serverlet: ["001","Spegatti",12, "002", "Pasta",  13, "003", "Fettuccine ", 14,"004", "Coke", 3];
 
-        // change forloop to everytime page gets load
+async function setUpMenuItems(){
+    // calling getMemuItems function to fetch the server, then return the data from the server 
+    const returnedArray = await getMenuItems();
+    console.log(returnedArray);
+    let dataLenghth = returnedArray.length;
 
-for (let i = 0; i < dataLenghth; i+=3) {
-  // set itemName and price
-  itemID = fakeData[i];
-  itemName = fakeData[i+1];
-  price = fakeData[i+2];
-  // append the created block to menu 
-  document.getElementById('menuBoxContainer').appendChild(newBlock(itemID,itemName,price));
+    let id = 0,itemName = 0,price = 0;
+    for (let i = 0; i < dataLenghth; i+=3) {
+    // set itemName and price
+    itemID = returnedArray[i];
+    itemName = returnedArray[i+1];
+    price = returnedArray[i+2];
+    // append the created block to menu 
+    document.getElementById('menuBoxContainer').appendChild(newBlock(itemID,itemName,price));
+    }
 }
+
+setUpMenuItems();
+
 
 
 //function that creates the child element 
