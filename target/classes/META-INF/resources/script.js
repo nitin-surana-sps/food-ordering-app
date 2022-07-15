@@ -31,7 +31,7 @@ AddButton.addEventListener("click", function() {
 
 
 async function test(){
-    let response = await fetch('/list-tasks');
+    let response = await fetch('/list-menuItems');
     if(response.ok){
         const JsonArray = await  response.json();
         console.log(JsonArray);
@@ -55,7 +55,7 @@ let returnData = [];
 async function getMenuItems() {
 
     // send get request 
-    let responseFromServer = await fetch('/menuItems');
+    let responseFromServer = await fetch('/list-menuItems');
     if (responseFromServer.ok) {
         // return the array on success
       const JsonArray = await  responseFromServer.json();

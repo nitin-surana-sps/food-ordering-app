@@ -26,9 +26,8 @@ public class MenuFormHandlerServlet extends HttpServlet {
     String itemName = request.getParameter("itemName");
     // Get itemPrice
     String itemPrice = request.getParameter("itemPrice");
-
+    // Create a time stamp
     long timestamp = System.currentTimeMillis();
-
 
         // Store data to Datastore 
     // Create Datastore instance
@@ -47,12 +46,7 @@ public class MenuFormHandlerServlet extends HttpServlet {
     // Store data
     datastore.put(taskEntity);
 
-    //String textValue = request.getParameter("data");
-    // Print the value so you can see it in the server logs.
-    //System.out.println("Name: " +name + "Email: " + email +"You submitted: " + textValue);
-
-    // Write the value to the response so the user can see it.
-    //response.getWriter().println("Name: " +name + "Email: " + email +"You submitted: " + textValue);
+    // Returned to front page after submiting Data
     response.sendRedirect("/index.html");
   }
 }
