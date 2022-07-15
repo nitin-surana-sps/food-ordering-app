@@ -123,27 +123,27 @@ function newBlock(itemID,itemName,price){
 
 
 
-let menuURL = "menu.html?";
-
 // add event listener by a for loop 
 function setEvenListener(menuEdit,Data,DataLength){
-    DataLength /=3; 
-    console.log("datalength",DataLength);
-    console.log(menuEdit);
+
+    DataLength /=3;
     for (let i = 0; i < DataLength; i++) {
         // pass event listener to all menu edit button
         let edit = menuEdit[i];
         edit.addEventListener("click", function(){
-          console.log(Data[i]);
+          console.log(Data[i*3]);
+          console.log(Data[i*3+1]);
+          console.log(Data[i*3+2]);
           
-        //   let id = Data[i];
-        //   let name = Data[i+1];
-        //   let price = Data[i+2];
+          // declare variables for url parameters 
+          let id = Data[i*3];
+          let name = Data[i*3+1];
+          let price = Data[i*3+2];
           
           // url parameters
        
-        //   const url = "url?id1=value1&id2=value2";
-        //   window.location.href = menuURL;
+        let menuURL = `menu.html?itemID=${id}&itemName=${name}&itemPrice=${price}`;
+        window.location.href = menuURL;
           
         })
       }
