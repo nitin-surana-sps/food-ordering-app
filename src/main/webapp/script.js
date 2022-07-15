@@ -64,7 +64,12 @@ async function setUpMenuItems(){
     }
 }
 
-setUpMenuItems();
+
+// Reseting the webpage everytime the page gets loaded
+window.onload = function() {
+    setUpMenuItems();
+}
+
 
 
 
