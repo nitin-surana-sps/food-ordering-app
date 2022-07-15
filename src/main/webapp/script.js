@@ -23,11 +23,12 @@ AddButton.addEventListener("click", function() {
 });
 
 
+
+
+
 // Menu Flow
 
 // Test ListTaskServlet
-
-
 
 
 // async function test(){
@@ -71,17 +72,26 @@ async function setUpMenuItems(){
     const returnedArray = await getMenuItems();
     console.log(returnedArray);
     let dataLenghth = returnedArray.length;
+    let itemID = 0,itemName = 0,price = 0;
 
-    let id = 0,itemName = 0,price = 0;
     for (let i = 0; i < dataLenghth; i+=3) {
-    // set itemName and price
-    itemID = returnedArray[i];
-    itemName = returnedArray[i+1];
-    price = returnedArray[i+2];
-    // append the created block to menu 
-    document.getElementById('menuBoxContainer').appendChild(newBlock(itemID,itemName,price));
+        // set itemName and price
+        itemID = returnedArray[i];
+        itemName = returnedArray[i+1];
+        price = returnedArray[i+2];
+        // append the created block to menu 
+        document.getElementById('menuBoxContainer').appendChild(newBlock(itemID,itemName,price));
     }
+    
+    // create an object to hold all the menut edit buttons
+    let menuEdit = document.getElementsByClassName("menuEditButton");
+
+
+
+    // call setEventListener
+    setEvenListener(menuEdit,returnedArray,dataLenghth);
 }
+
 
 
 // Reseting the webpage everytime the page gets loaded
@@ -104,9 +114,38 @@ function newBlock(itemID,itemName,price){
           <div class="child">$${price}</div>
         </div>
         <div class="boxButton">
-            <button class="editButton">Edit</button>
+            <button class="menuEditButton">Edit</button>
         </div>
     </div>
 `;
   return div
 }
+
+
+
+let menuURL = "menu.html?";
+
+// add event listener by a for loop 
+function setEvenListener(menuEdit,Data,DataLength){
+    DataLength /=3; 
+    console.log("datalength",DataLength);
+    console.log(menuEdit);
+    for (let i = 0; i < DataLength; i++) {
+        // pass event listener to all menu edit button
+        let edit = menuEdit[i];
+        edit.addEventListener("click", function(){
+          console.log(Data[i]);
+          
+        //   let id = Data[i];
+        //   let name = Data[i+1];
+        //   let price = Data[i+2];
+          
+          // url parameters
+       
+        //   const url = "url?id1=value1&id2=value2";
+        //   window.location.href = menuURL;
+          
+        })
+      }
+}
+
