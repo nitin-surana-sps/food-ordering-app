@@ -1,4 +1,3 @@
-/home/ljiang/software-product-sprint/food-ordering-app/src/main/java/com/google/sps/servlets/ListTasksServlet.java
 /home/ljiang/software-product-sprint/food-ordering-app/src/main/java/com/google/sps/ServerMain.java
-/home/ljiang/software-product-sprint/food-ordering-app/src/main/java/com/google/sps/servlets/MenuItemList.java
+/home/ljiang/software-product-sprint/food-ordering-app/src/main/java/com/google/sps/servlets/MenuItemListServlet.java
 /home/ljiang/software-product-sprint/food-ordering-app/src/main/java/com/google/sps/servlets/MenuFormHandlerServlet.java

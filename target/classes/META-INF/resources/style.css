@@ -90,6 +90,10 @@ input{
   height: 80px;
 }
 
+#menuSubmit{
+    
+}
+
 .boxButton{
     display: flex;
     justify-content: flex-end;
