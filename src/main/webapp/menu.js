@@ -16,30 +16,26 @@ menuItemPrice.value = Price;
 // in do post, if id is not null, then update entry
 
 
-// If the item id exist, replace the form submit button with a new Update button outside the form. 
+
+// Try appending a transparent input in the form
+
 if (ID) {
-    //remove the form submit button
+    //Change button name from Confirm to Update
     let confirm = document.getElementById("menuSubmit");
-    confirm.remove();
-    // append another in the form
+    confirm.value = "Update";
+    // Prepend the item ID inputbox as read only so that the user can't edit it
     let div = document.createElement('div');
-    div.setAttribute("class", "boxButton");
-    div.innerHTML = `<button class="submitButton" id = "updateButton">Update</button>`;
-    document.getElementById('subBox').appendChild(div);
-    // call a function to add event listener to 
-    updateButtonEventListener();
+    div.setAttribute("class", "entryRow");
+    div.innerHTML = `   
+                        <label>Item ID: </label>
+                        <input type="text" id = "IDinput" name="itemID" value=${ID} readonly>
+                    `;
+    document.getElementById('MenuForm').prepend(div);
     
   }
 
-  
-  // event listener function 
-  function updateButtonEventListener(){
-    let updateButton = document.getElementById("updateButton");
-    updateButton.addEventListener("click",function() {
-      // new object that contains item id,updated item name and item price
-      let obj = {itemID:ID, itemName: menuItemName.value, itemPrice: menuItemPrice.value};
-      console.log(obj);
-  });
-  }
-    
+
+
+
+
   
