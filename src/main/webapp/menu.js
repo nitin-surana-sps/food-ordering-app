@@ -1,7 +1,7 @@
 
 // Parse data from parameter URl
 const urlParams = new URLSearchParams(window.location.search);
-const ID = urlParams.get('itemID'); 
+const ID = parseInt(urlParams.get('itemID')); 
 const Name = urlParams.get('itemName'); 
 const Price = urlParams.get('itemPrice'); 
 
