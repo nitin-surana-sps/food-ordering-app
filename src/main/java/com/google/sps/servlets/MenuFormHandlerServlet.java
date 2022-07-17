@@ -38,11 +38,11 @@ public class MenuFormHandlerServlet extends HttpServlet {
     // Create a task
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("MenuItem");
     
-    //String itemID = request.getParameter("itemID");
-    long id = 0;
-    id = Long.parseLong(request.getParameter("itemID"));
-        // if itemID exist, then update, else create a new entry
-        if (id==0){
+    String id = request.getParameter("itemID");
+    long idNum = 0;
+
+        // if itemID doesn't exist, then create a new entity
+        if (id==null){
             // Create entity
             FullEntity taskEntity = Entity.newBuilder(keyFactory.newKey())
             .set("itemName", itemName)
@@ -53,8 +53,9 @@ public class MenuFormHandlerServlet extends HttpServlet {
             // Store data
             datastore.put(taskEntity);
             
-        } else{
-            Key taskKey = datastore.newKeyFactory().setKind("MenuItem").newKey(id);
+        } else{  // if itemID exists, then update that enntity
+            idNum = Long.parseLong(id);
+            Key taskKey = datastore.newKeyFactory().setKind("MenuItem").newKey(idNum);
             // Prepares the new entity
             Entity task = Entity.newBuilder(taskKey)
             .set("itemName", itemName)
@@ -64,8 +65,6 @@ public class MenuFormHandlerServlet extends HttpServlet {
             datastore.put(task);
  
         }
-
-    
 
     // Returned to front page after submiting Data
     response.sendRedirect("/index.html");
