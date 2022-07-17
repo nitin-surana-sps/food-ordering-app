@@ -113,7 +113,9 @@ function newBlock(itemID,itemName,price){
           <div class="child">${itemName}</div>
           <div class="child">$${price}</div>
         </div>
+
         <div class="boxButton">
+            <button class="menuDeleteButton">Delete</button>
             <button class="menuEditButton">Edit</button>
         </div>
     </div>
