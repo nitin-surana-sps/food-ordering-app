@@ -10,11 +10,6 @@ html, body {
   width: 100%;
 }
 
-#IDinput{
-    background-color: #F2E2D7;
-    border: none;
-}
-
 .wrapper{
   display: flex;
   flex-direction: column;
@@ -66,7 +61,6 @@ input{
     border: 1px solid #436073;
     border-radius: 8px;
     width: 214px;
-    padding-left: 7px;
 }
 
 #resBox{
@@ -97,13 +91,13 @@ input{
 }
 
 #menuSubmit{
-    margin-top: 47px;
-    margin-right: -62px;
+    
 }
 
 .boxButton{
     display: flex;
     justify-content: flex-end;
+    width: 90%;
 }
 
 .button{

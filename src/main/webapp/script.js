@@ -23,12 +23,11 @@ AddButton.addEventListener("click", function() {
 });
 
 
-
-
-
 // Menu Flow
 
 // Test ListTaskServlet
+
+
 
 
 // async function test(){
@@ -72,26 +71,17 @@ async function setUpMenuItems(){
     const returnedArray = await getMenuItems();
     console.log(returnedArray);
     let dataLenghth = returnedArray.length;
-    let itemID = 0,itemName = 0,price = 0;
 
+    let id = 0,itemName = 0,price = 0;
     for (let i = 0; i < dataLenghth; i+=3) {
-        // set itemName and price
-        itemID = returnedArray[i];
-        itemName = returnedArray[i+1];
-        price = returnedArray[i+2];
-        // append the created block to menu 
-        document.getElementById('menuBoxContainer').appendChild(newBlock(itemID,itemName,price));
+    // set itemName and price
+    itemID = returnedArray[i];
+    itemName = returnedArray[i+1];
+    price = returnedArray[i+2];
+    // append the created block to menu 
+    document.getElementById('menuBoxContainer').appendChild(newBlock(itemID,itemName,price));
     }
-    
-    // create an object to hold all the menut edit buttons
-    let menuEdit = document.getElementsByClassName("menuEditButton");
-
-
-
-    // call setEventListener
-    setEvenListener(menuEdit,returnedArray,dataLenghth);
 }
-
 
 
 // Reseting the webpage everytime the page gets loaded
@@ -113,41 +103,10 @@ function newBlock(itemID,itemName,price){
           <div class="child">${itemName}</div>
           <div class="child">$${price}</div>
         </div>
-
         <div class="boxButton">
-            <button class="menuDeleteButton">Delete</button>
-            <button class="menuEditButton">Edit</button>
+            <button class="editButton">Edit</button>
         </div>
     </div>
 `;
   return div
 }
-
-
-
-// add event listener by a for loop 
-function setEvenListener(menuEdit,Data,DataLength){
-
-    DataLength /=3;
-    for (let i = 0; i < DataLength; i++) {
-        // pass event listener to all menu edit button
-        let edit = menuEdit[i];
-        edit.addEventListener("click", function(){
-          console.log(Data[i*3]);
-          console.log(Data[i*3+1]);
-          console.log(Data[i*3+2]);
-          
-          // declare variables for url parameters 
-          let id = Data[i*3];
-          let name = Data[i*3+1];
-          let price = Data[i*3+2];
-          
-          // url parameters
-       
-        let menuURL = `menu.html?itemID=${id}&itemName=${name}&itemPrice=${price}`;
-        window.location.href = menuURL;
-          
-        })
-      }
-}
-
