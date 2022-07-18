@@ -4,31 +4,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>Menu Item</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
-  <script defer src="script.js"></script>
+  <script defer src="menu.js"></script>
 
   <div class="entryPage">
     <div class="wrapper">
-      <h3> Enter Restaurant Information</h3>
+      <h3> Enter Menu Item</h3>
       <div class="pinkBox" id="subBox">
         <!--     Input Info -->
 
         <div class="boxText">
-          <form action = "/menu-form-handler" method="POST">
+          <form action = "/menu-form-handler" method="POST" id = "MenuForm">
             <div class="entryRow">
               <label>Item Name: </label>
-              <input type="text" name="itemName">
+              <input type="text" name="itemName" id="menuItemName">
             </div>
             <div class="entryRow">
               <label>Item Price: </label>
-              <input type="text" name="itemPrice">
+              <input type="text" name="itemPrice" id="menuItemPrice">
             </div>
-            <div class="boxButton">
+            <div class="boxButton" >
                 <input class = "button" id = "menuSubmit" type="submit" />
             </div>
           </form>
