@@ -30,6 +30,13 @@ AddButton.addEventListener("click", function() {
 
 // Test ListTaskServlet
 
+//async function getMenus(){
+  //  const responseFromServer = await fetch('/*');
+    // The json() function returns an object that contains fields that we can
+    // reference to create HTML.
+  //  const menu  = await responseFromServer.json();
+  
+  //  const fakeData= document.getElementById('menuBoxContainer');
 
 // async function test(){
 //     let response = await fetch('/list-menuItems');
@@ -122,6 +129,7 @@ function newBlock(itemID,itemName,price){
 `;
   return div
 }
+
 
 
 
