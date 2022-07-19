@@ -1,17 +1,18 @@
 // Restruant Information Edit Button
 let resButton = document.getElementById("restruantEdit");
+let restaurantID = 0;
+let restaurantName = "Local Kitchens";
+let restaurantAddress = "369 California Ave, Palo Alto, CA 94306";
+let phoneNumber = "8553842868";
+let restruantName = document.getElementById("restruantName");
+let restruantAddress = document.getElementById("restruantAddress");
+let restruantPhone = document.getElementById("restruantPhone");
+
 
 resButton.addEventListener("click", function() {
     // your code here...
   window.location.replace("resturant.html");
 })
-
-
-
-// insert value to restruantName
-
-let restruantName = document.getElementById("restruantName");
-restruantName.innerHTML = "Paragraph changed!";
 
 
 // Menu Add Button
@@ -30,13 +31,6 @@ AddButton.addEventListener("click", function() {
 
 // Test ListTaskServlet
 
-//async function getMenus(){
-  //  const responseFromServer = await fetch('/*');
-    // The json() function returns an object that contains fields that we can
-    // reference to create HTML.
-  //  const menu  = await responseFromServer.json();
-  
-  //  const fakeData= document.getElementById('menuBoxContainer');
 
 // async function test(){
 //     let response = await fetch('/list-menuItems');
@@ -104,6 +98,8 @@ async function setUpMenuItems(){
 // Reseting the webpage everytime the page gets loaded
 window.onload = function() {
     setUpMenuItems();
+    setUpResInfo();
+
 }
 
 
@@ -132,7 +128,6 @@ function newBlock(itemID,itemName,price){
 
 
 
-
 // add event listener by a for loop 
 function setEvenListener(menuEdit,Data,DataLength){
 
@@ -158,4 +153,38 @@ function setEvenListener(menuEdit,Data,DataLength){
         })
       }
 }
+
+async function getRestaurantInfo() {
+
+    // send get request 
+    let responseFromServer = await fetch('/list-resInfo');
+    if (responseFromServer.ok) {
+        // return the local array on success
+      const JsonArray2 = await responseFromServer.json();
+      return JsonArray2;
+    } else {
+      throw Error(responseFromServer.status);
+    }
+  
+  }
+
+  async function setUpResInfo() {
+    // calling getMemuItems function to fetch the server, then return the data from the server 
+    const returnedArray2 = await getRestaurantInfo();
+    console.log(returnedArray2);
+    let dataLenghth = returnedArray2.length;
+
+    for (let i = 0; i < dataLenghth; i+=4) {
+        // set itemName and price
+        restaurantName = returnedArray2[i];
+        restaurantAddress = returnedArray2[i+1];
+        phoneNumber = returnedArray2[i+2];
+    }
+    restruantName.innerHTML = restaurantName;
+    restruantAddress.innerHTML = restaurantAddress;
+    restruantPhone.innerHTML = phoneNumber;
+}
+// insert value to restruantName
+//change restaurant info
+
 

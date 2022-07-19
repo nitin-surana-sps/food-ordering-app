@@ -1,0 +1,52 @@
+
+package com.google.sps.servlets;
+
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Query;
+import com.google.cloud.datastore.QueryResults;
+import com.google.cloud.datastore.StructuredQuery.OrderBy;
+import com.google.gson.Gson;
+// import com.google.sps.data.MenuItem;
+import java.io.IOException;
+import java.util.ArrayList;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/** Servlet responsible for listing tasks. */
+@WebServlet("/list-resInfo")
+public class RestaurantListServlet extends HttpServlet {
+
+  @Override
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    //   Create Datastore instance
+    Datastore datastore2 = DatastoreOptions.getDefaultInstance().getService();
+    //   Run query to get Entity lists from DataStore
+    Query<Entity> query2 =
+        Query.newEntityQueryBuilder().setKind("ResInfo").setOrderBy(OrderBy.desc("phoneNumber")).build();
+    QueryResults<Entity> results = datastore2.run(query2);
+    //   Declare an empty array list
+    ArrayList<String> menulist2 = new ArrayList<String> ();
+    //   Pass the properties to the array from the Entity list
+    while (results.hasNext()) {
+      Entity entity2 = results.next();
+
+      String restaurantName = entity2.getString("restaurantName");
+      String restaurantAddress = entity2.getString("restaurantAddress");
+      String phoneNum = entity2.getString("phoneNumber");
+
+      menulist2.add(restaurantName);
+      menulist2.add(restaurantAddress);
+      menulist2.add(phoneNum);
+   
+    }
+    // Send back the array list in JSON format
+    Gson gson2 = new Gson();
+
+    response.setContentType("application/json;");
+    response.getWriter().println(gson2.toJson(menulist2));
+  }
+}
