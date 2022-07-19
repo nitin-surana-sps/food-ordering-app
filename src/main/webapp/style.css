@@ -10,6 +10,11 @@ html, body {
   width: 100%;
 }
 
+#IDinput{
+    background-color: #F2E2D7;
+    border: none;
+}
+
 .wrapper{
   display: flex;
   flex-direction: column;
@@ -36,6 +41,7 @@ html, body {
 #menuBoxContainer{
   display: flex;
   flex-wrap: wrap;
+  min-width: 600px;
 }
 .entryRow{
   margin: 15px;
@@ -60,6 +66,7 @@ input{
     border: 1px solid #436073;
     border-radius: 8px;
     width: 214px;
+    padding-left: 7px;
 }
 
 #resBox{
@@ -89,10 +96,27 @@ input{
   height: 80px;
 }
 
+#menuSubmit{
+    margin-top: 47px;
+    margin-right: -62px;
+}
+
 .boxButton{
     display: flex;
     justify-content: flex-end;
     width: 90%;
+}
+
+.button{
+    text-align: center;
+    color: whitesmoke;
+    background-color: #21695C;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(0 0 0 / 10%);
+    width: 90px;
+    height: 26px;
+    margin: 10px;
 }
 
 Button{
