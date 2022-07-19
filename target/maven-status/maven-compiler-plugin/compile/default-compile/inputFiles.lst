@@ -1,3 +1,4 @@
 /home/gchaka/software-product-sprint/food-ordering-app/src/main/java/com/google/sps/servlets/MenuFormHandlerServlet.java
 /home/gchaka/software-product-sprint/food-ordering-app/src/main/java/com/google/sps/servlets/MenuItemListServlet.java
 /home/gchaka/software-product-sprint/food-ordering-app/src/main/java/com/google/sps/ServerMain.java
+/home/gchaka/software-product-sprint/food-ordering-app/src/main/java/com/google/sps/servlets/RestaurantHandlerServlet.java
